@@ -75,10 +75,12 @@ public class UserController {
         String userAccount = userRegisterRequest.getUserAccount();
         String userPassword = userRegisterRequest.getUserPassword();
         String checkPassword = userRegisterRequest.getCheckPassword();
+        String userName = userRegisterRequest.getUserName();
+        String userAvatar = "https://pic4.zhimg.com/v2-188fe7f052e183bbb8370280f99ab38c_r.jpg?source=1940ef5c";
         if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)) {
             return null;
         }
-        long result = userService.userRegister(userAccount, userPassword, checkPassword);
+        long result = userService.userRegister(userAccount, userPassword, checkPassword,userName,userAvatar);
         return ResultUtils.success(result);
     }
 

@@ -2,6 +2,7 @@ package com.yupi.springbootinit.controller;
 
 import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @RestController
 @RequestMapping("/queue")
 @Slf4j
+@Profile({"dev","local"})
 public class QueueController {
 
     @Resource
@@ -35,7 +37,7 @@ public class QueueController {
             // 打印一条日志信息，包括任务名称和执行线程的名称
             log.info("任务执行中：" + name + "，执行人：" + Thread.currentThread().getName());
             try {
-                // 让线程休眠10分钟，模拟长时间运行的任务
+                // 让线程休眠1分钟，模拟长时间运行的任务
                 Thread.sleep(600000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

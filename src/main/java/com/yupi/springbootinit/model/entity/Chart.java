@@ -70,4 +70,14 @@ public class Chart {
      */
     @TableLogic
     private Integer isDelete;
+
+    /**
+     * 任务状态
+     */
+    private String status;
+
+    /**
+     * 执行信息
+     */
+    private String execMessage;
 }
