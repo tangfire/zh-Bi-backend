@@ -52,6 +52,7 @@ public class BiMessageConsumer {
             channel.basicNack(deliveryTag, false, false);
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "消息为空");
         }
+
         long chartId = Long.parseLong(message);
         Chart chart = chartService.getById(chartId);
         if (chart == null) {

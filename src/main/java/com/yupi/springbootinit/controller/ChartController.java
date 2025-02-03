@@ -687,6 +687,37 @@ public class ChartController {
     }
 
 
+    /**
+     * 修改图表重新生成
+     */
+    @PostMapping("/regen")
+    public BaseResponse<BiResponse> reGenChartByAsyncMq(@RequestBody ChartRegenRequest chartRegenRequest, HttpServletRequest request) {
+        if (chartRegenRequest == null) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR, "图表不存在");
+        }
+        BiResponse biResponse = chartService.regenChartByAsyncMq(chartRegenRequest, request);
+        return ResultUtils.success(biResponse);
+    }
+
+    /**
+     * 查询结论
+     * @param chartId
+     * @return
+     */
+    @PostMapping("/conclusion")
+    public BaseResponse<BiResponse> showChartConclusion(Long chartId){
+
+        Chart Chart = chartService.selectChartResult(chartId);
+
+        BiResponse biResponse = new BiResponse();
+        biResponse.setChartId(chartId);
+        biResponse.setGenChart(Chart.getGenChart());
+        biResponse.setGenResult(Chart.getGenResult());
+
+        return ResultUtils.success(biResponse);
+
+
+    }
 
 
 

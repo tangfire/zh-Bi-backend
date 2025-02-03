@@ -76,7 +76,7 @@ public class UserController {
         String userPassword = userRegisterRequest.getUserPassword();
         String checkPassword = userRegisterRequest.getCheckPassword();
         String userName = userRegisterRequest.getUserName();
-        String userAvatar = "https://pic4.zhimg.com/v2-188fe7f052e183bbb8370280f99ab38c_r.jpg?source=1940ef5c";
+        String userAvatar = "https://tse2-mm.cn.bing.net/th/id/OIP-C.7GLMYPqMlt2LgkbPsOnDIAAAAA?rs=1&pid=ImgDetMain";
         if (StringUtils.isAnyBlank(userAccount, userPassword, checkPassword)) {
             return null;
         }
