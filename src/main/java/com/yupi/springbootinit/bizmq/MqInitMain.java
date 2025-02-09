@@ -16,14 +16,18 @@ public class MqInitMain {
             factory.setHost("localhost");
 
             // 设置端口号（Docker映射的端口）
-            factory.setPort(5674);
+//            factory.setPort(5674);
+            factory.setPort(5672);
 
             // 设置虚拟主机
-            factory.setVirtualHost("my_vhost");
+//            factory.setVirtualHost("my_vhost");
+            factory.setVirtualHost("/");
 
             // 设置用户名和密码
             factory.setUsername("admin");
-            factory.setPassword("8888.216");
+//            factory.setPassword("8888.216");
+            factory.setPassword("8888.216216");
+
 
 
 

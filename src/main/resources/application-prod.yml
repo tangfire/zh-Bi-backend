@@ -8,30 +8,52 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/my_db
+    url: jdbc:mysql://127.0.0.1:3306/zh_bi
     username: root
-    password: 123456
+    password: 8888.216216
   # Redis 配置
   # todo 需替换配置
   redis:
     database: 1
     host: localhost
-    port: 6379
+    port: 6677
     timeout: 5000
-    password: 123456
+    password: 8888.216216
   # Elasticsearch 配置
   # todo 需替换配置
-  elasticsearch:
-    uris: http://localhost:9200
-    username: root
-    password: 123456
+#  elasticsearch:
+#    uris: http://localhost:9200
+#    username: root
+#    password: 123456
+  servlet:
+    multipart:
+      # 大小限制
+      max-file-size: 10MB
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: 8888.216216
+    username: admin
+    virtual-host: /  # 虚拟主机
 mybatis-plus:
   configuration:
-    # 生产环境关闭日志
-    log-impl: ''
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的实体字段名
+      logic-delete-value: 1 # 逻辑已删除值（默认为 1）
+      logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
 # 接口文档配置
-knife4j:
-  basic:
-    enable: true
-    username: root
-    password: 123456
+#knife4j:
+#  basic:
+#    enable: true
+#    username: root
+#    password: 123456
+
+## 讯飞 AI 配置
+xun-fei:
+  client:
+    appId: 7ec09871
+    apiSecret: MzMxYjRiNmVlNDI5NDlmNjFkNzI5NGFl
+    apiKey: 22e46b5fd4951582f48160964855717f
