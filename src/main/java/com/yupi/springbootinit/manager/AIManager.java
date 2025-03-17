@@ -57,8 +57,12 @@ public class AIManager {
                     "结论：";
             content = predefinedInformation + "\n" + content;
         }
+
+//        System.out.println("content:" + content);
+
         List<SparkMessage> messages = new ArrayList<>();
         messages.add(SparkMessage.userContent(content));
+
         // 构造请求
         SparkRequest sparkRequest = SparkRequest.builder()
                 // 消息列表
